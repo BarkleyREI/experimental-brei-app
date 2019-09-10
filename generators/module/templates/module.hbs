@@ -1,0 +1,17 @@
+---
+title: "<%= pretty %>"
+layout: module.hbs
+module: true
+---
+
+<!-- module:<%= name %> -->
+{{#if mode}}
+	{{#parseFixture '<%= name %>.json'}}
+		{{> <%= name %> mode }}
+	{{/parseFixture}}
+{{else}}
+	{{#parseFixture '<%= name %>.json'}}
+		{{> <%= name %> default }}
+	{{/parseFixture}}
+{{/if}}
+<!-- end module:<%= name %> -->

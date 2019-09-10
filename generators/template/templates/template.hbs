@@ -1,0 +1,14 @@
+---
+title: "<%= pretty %>"
+template: true
+---
+
+<!-- template:<%= name %> -->
+{{#parseFixture '<%= name %>.json'}}
+<main id="main" class="main <%= name %>">
+
+	<h1><%= pretty %></h1>
+
+</main>
+{{/parseFixture}}
+<!-- end template:<%= name %> -->
