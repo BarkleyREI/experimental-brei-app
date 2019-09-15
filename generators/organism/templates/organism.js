@@ -1,6 +1,6 @@
 /**
- * <%= pretty %> module.
- * @module modules/<%= name %>
+ * <%= pretty %> component.
+ * @module components/<%= name %>
 */
 const <%= name %> = {
 
@@ -10,4 +10,4 @@ const <%= name %> = {
 
 };
 
-export <%= name %>;
+export default <%= name %>;
