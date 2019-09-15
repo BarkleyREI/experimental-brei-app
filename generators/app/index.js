@@ -25,7 +25,7 @@ module.exports = class extends Generator {
 			'Welcome to the BarkleyREI project generator!\nv' + this.pkg.version
 		));
 
-		const notifier = updateNotifier({
+		let notifier = updateNotifier({
 			pkg,
 			updateCheckInterval: 1
 		});
@@ -49,25 +49,40 @@ module.exports = class extends Generator {
 				default: 'Create a New Project',
 				choices: [
 					'Create a New Project',
-					'Create a Partial',
-					'Create a Module',
-					'Create a Template'
+					'Create a Template',
+					'Create an Organism',
+					'Create a Molecule',
+					'Create an Atom',
+					'Create a Partial (LEGACY)',
+					'Create a Module (LEGACY)'
 					// 'Import a Pattern',
 					// 'Update Your Project'
 				]
 			}).then(function(answer) {
 
 				switch (answer.command) {
-					case 'Create a Partial':
+					case 'Create a Partial (LEGACY)':
 						this.answer = 'partial';
 						// this.composeWith('brei-next:partial', {});
 						break;
-					case 'Create a Module':
+					case 'Create a Module (LEGACY)':
 						this.answer = 'module';
 						// this.composeWith('brei-next:module', {});
 						break;
 					case 'Create a Template':
 						this.answer = 'template';
+						// this.composeWith('brei-next:template', {});
+						break;
+					case 'Create an Organism':
+						this.answer = 'organism';
+						// this.composeWith('brei-next:template', {});
+						break;
+					case 'Create a Molecule':
+						this.answer = 'molecule';
+						// this.composeWith('brei-next:template', {});
+						break;
+					case 'Create an Atom':
+						this.answer = 'atom';
 						// this.composeWith('brei-next:template', {});
 						break;
 					// case 'Import a Pattern':
