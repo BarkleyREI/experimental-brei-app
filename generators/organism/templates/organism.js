@@ -11,3 +11,9 @@ const <%= name %> = {
 };
 
 export default <%= name %>;
+
+// to use:
+//
+// import <%= name %> from './modules/<%= name %>';
+//
+// <%= name %>.init();
