@@ -108,7 +108,7 @@ module.exports = class extends Generator {
 				this.templatePath('organism.js'),
 				this.destinationPath('app/ejs/modules/' + this.scriptName + '.js'),
 				{
-					pretty: this.pretty,
+					pretty: this.prettyname,
 					name: this.scriptName
 				}
 			);
