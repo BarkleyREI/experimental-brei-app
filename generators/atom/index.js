@@ -39,7 +39,7 @@ module.exports = class extends Generator {
 				tag = 'div';
 			}
 
-			this.safename = _.snakeCase(name);
+			this.safename = util._format_input(name);
 			this.prettyname = _.startCase(pretty);
 			this.tag = _.lowerCase(tag);
 

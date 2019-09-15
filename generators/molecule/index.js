@@ -2,6 +2,7 @@
 
 const Generator = require('yeoman-generator');
 const util = require('../../lib/utils.js');
+const _ = require('lodash');
 
 module.exports = class extends Generator {
 
@@ -37,7 +38,7 @@ module.exports = class extends Generator {
 				tag = 'div';
 			}
 
-			this.safename = _.snakeCase(name);
+			this.safename = util._format_input(name);
 			this.prettyname = _.startCase(name);
 			this.tag = _.lowerCase(tag);
 

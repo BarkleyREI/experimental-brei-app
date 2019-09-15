@@ -2,6 +2,7 @@
 
 const Generator = require('yeoman-generator');
 const util = require('../../lib/utils.js');
+const _ = require('lodash');
 
 module.exports = class extends Generator {
 
@@ -37,7 +38,7 @@ module.exports = class extends Generator {
 				tag = 'div';
 			}
 
-			this.safename = _.snakeCase(name);
+			this.safename = util._format_input(name);
 			this.prettyname = _.startCase(name);
 			this.tag = _.lowerCase(tag);
 
@@ -48,19 +49,19 @@ module.exports = class extends Generator {
 	writing() {
 		this.fs.copyTpl(
 			this.templatePath('partial.hbs'),
-			this.destinationPath('app/assemble/partials/' + this.name + '.hbs'),
+			this.destinationPath('app/assemble/partials/' + this.safename + '.hbs'),
 			{
 				tag: this.tag,
-				pretty: this.pretty,
-				name: this.name
+				pretty: this.prettyname,
+				name: this.safename
 			}
 		);
 
 		this.fs.copyTpl(
 			this.templatePath('partial.scss'),
-			this.destinationPath('app/scss/partials/_' + this.name + '.scss'),
+			this.destinationPath('app/scss/partials/_' + this.safename + '.scss'),
 			{
-				name: this.name
+				name: this.safename
 			}
 		);
 	}
