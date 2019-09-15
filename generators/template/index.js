@@ -1,7 +1,7 @@
 'use strict';
 
-var Generator = require('yeoman-generator');
-var util = require('../../lib/utils.js');
+const Generator = require('yeoman-generator');
+const util = require('../../lib/utils.js');
 
 module.exports = class extends Generator {
 
@@ -15,24 +15,21 @@ module.exports = class extends Generator {
 	}
 
 	prompting() {
-		var done = this.async();
+		let done = this.async();
 
-		var prompts = [{
+		let prompts = [{
 			type: 'input',
 			name: 'name',
-			message: 'Template name ("level-page", "column_content-one")',
+			message: 'Template name ("standard-level", "program-finder")',
 			default: ''
 		}];
 
 		return this.prompt(prompts).then(function (props) {
-			var name = props.name;
-			var pretty = name;
+			let name = props.name;
+			let pretty = name;
 
-			name = util._format_input(name);
-			pretty = util._prettify_input(name);
-
-			this.name = name;
-			this.pretty = pretty;
+			this.safename = _.snakeCase(name);
+			this.prettyname = _.startCase(name);
 
 			done();
 		}.bind(this));
@@ -41,28 +38,26 @@ module.exports = class extends Generator {
 	writing() {
 		this.fs.copyTpl(
 			this.templatePath('template.hbs'),
-			this.destinationPath('app/assemble/' + this.name + '.hbs'),
+			this.destinationPath('app/assemble/' + this.safename + '.hbs'),
 			{
-				pretty: this.pretty,
-				name: this.name
+				pretty: this.prettyname,
+				name: this.safename
 			}
 		);
 
 		this.fs.copyTpl(
 			this.templatePath('template.scss'),
-			this.destinationPath('app/scss/templates/_' + this.name + '.scss'),
+			this.destinationPath('app/scss/templates/_' + this.safename + '.scss'),
 			{
-				pretty: this.pretty,
-				name: this.name
+				name: this.safename
 			}
 		);
 
 		this.fs.copyTpl(
 			this.templatePath('template.json'),
-			this.destinationPath('app/assemble/fixtures/' + this.name + '.json'),
+			this.destinationPath('app/assemble/fixtures/' + this.safename + '.json'),
 			{
-				pretty: this.pretty,
-				name: this.name
+				pretty: this.prettyname
 			}
 		);
 	}

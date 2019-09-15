@@ -20,7 +20,7 @@ module.exports = class extends Generator {
 		let prompts = [{
 			type: 'input',
 			name: 'name',
-			message: 'Partial name ("_green-button", "header-logo")',
+			message: 'Molecule name ("green-button", "header-logo")',
 			default: ''
 		}, {
 			type: 'input',
@@ -47,20 +47,20 @@ module.exports = class extends Generator {
 
 	writing() {
 		this.fs.copyTpl(
-			this.templatePath('partial.hbs'),
-			this.destinationPath('app/assemble/partials/' + this.name + '.hbs'),
+			this.templatePath('molecule.hbs'),
+			this.destinationPath('app/assemble/molecules/' + this.safename + '.hbs'),
 			{
 				tag: this.tag,
-				pretty: this.pretty,
-				name: this.name
+				pretty: this.prettyname,
+				name: this.safename
 			}
 		);
 
 		this.fs.copyTpl(
-			this.templatePath('partial.scss'),
-			this.destinationPath('app/scss/partials/_' + this.name + '.scss'),
+			this.templatePath('molecule.scss'),
+			this.destinationPath('app/scss/molecules/_' + this.safename + '.scss'),
 			{
-				name: this.name
+				name: this.safename
 			}
 		);
 	}

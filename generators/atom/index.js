@@ -2,6 +2,7 @@
 
 const Generator = require('yeoman-generator');
 const util = require('../../lib/utils.js');
+const _ = require('lodash');
 
 module.exports = class extends Generator {
 
@@ -20,7 +21,7 @@ module.exports = class extends Generator {
 		let prompts = [{
 			type: 'input',
 			name: 'name',
-			message: 'Partial name ("_green-button", "header-logo")',
+			message: 'Atom name ("logo", "button")',
 			default: ''
 		}, {
 			type: 'input',
@@ -32,13 +33,14 @@ module.exports = class extends Generator {
 		return this.prompt(prompts).then(function (props) {
 			let name = props.name;
 			let tag = props.tag;
+			let pretty = name;
 
 			if (tag === '' || typeof tag === 'undefined') {
 				tag = 'div';
 			}
 
 			this.safename = _.snakeCase(name);
-			this.prettyname = _.startCase(name);
+			this.prettyname = _.startCase(pretty);
 			this.tag = _.lowerCase(tag);
 
 			done();
@@ -47,20 +49,20 @@ module.exports = class extends Generator {
 
 	writing() {
 		this.fs.copyTpl(
-			this.templatePath('partial.hbs'),
-			this.destinationPath('app/assemble/partials/' + this.name + '.hbs'),
+			this.templatePath('atom.hbs'),
+			this.destinationPath('app/assemble/atoms/' + this.safename + '.hbs'),
 			{
 				tag: this.tag,
-				pretty: this.pretty,
-				name: this.name
+				pretty: this.prettyname,
+				name: this.safename
 			}
 		);
 
 		this.fs.copyTpl(
-			this.templatePath('partial.scss'),
-			this.destinationPath('app/scss/partials/_' + this.name + '.scss'),
+			this.templatePath('atom.scss'),
+			this.destinationPath('app/scss/atoms/_' + this.safename + '.scss'),
 			{
-				name: this.name
+				name: this.safename
 			}
 		);
 	}

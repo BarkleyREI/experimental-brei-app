@@ -1,36 +1,29 @@
-# generator-brei-app
+# generator-brei-next
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/BarkleyREI/generator-brei-app.svg)](https://greenkeeper.io/)
-[![Version npm][version]](http://browsenpm.org/package/generator-brei-app)
-[![Build Status](https://travis-ci.org/BarkleyREI/generator-brei-app.svg?branch=master)](https://travis-ci.org/BarkleyREI/generator-brei-app)
+[![Greenkeeper badge](https://badges.greenkeeper.io/BarkleyREI/generator-brei-next.svg)](https://greenkeeper.io/)
+[![Version npm][version]](http://browsenpm.org/package/generator-brei-next)
+[![Build Status](https://travis-ci.org/BarkleyREI/generator-brei-next.svg?branch=master)](https://travis-ci.org/BarkleyREI/generator-brei-app)
 
-[version]: http://img.shields.io/npm/v/generator-brei-app.svg?style=flat-square
+[version]: http://img.shields.io/npm/v/generator-brei-next.svg?style=flat-square
 
 ## Getting Started with a Project
 
-Install Yeoman, Bower, Grunt CLI, and JSHint
+Install Yeoman
 
 ```bash
-npm install -g yo bower jshint grunt-cli
+npm install -g yo
 ```
-Install Ruby
-- Use a version lower than 2.5 (as of 1/10/2018)
 
-Install Compass, SASS, and SCSS_Lint
-````bash
-sudo gem install compass sass scss_lint
-````
-
-Install the BREI-App Generator
+Install the BREI-Next Generator
 
 ```bash
-npm install -g generator-brei-app
+npm install -g generator-brei-next
 ```
 
 Finally, initiate the generator:
 
 ```bash
-yo brei-app
+yo brei-next
 ```
 
 From here you will be presented with a series of options:
@@ -77,15 +70,9 @@ yo brei-app:partial
 
 **This only needs run if you are locally modifying the generator files in this repo, not a project created with it.**
 
-Prerequisites:
-
-```bash
-npm install -g jshint
-```
-
 To Test:
 ```bash
 npm test
 ```
 
-The test takes about 10-12 minutes to run.
+The test takes about 3-4 minutes to run.
