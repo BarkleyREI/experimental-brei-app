@@ -1,8 +1,8 @@
 # generator-brei-next
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/BarkleyREI/generator-brei-next.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/BarkleyREI/experimental-brei-app.svg)](https://greenkeeper.io/)
 [![Version npm][version]](http://browsenpm.org/package/generator-brei-next)
-[![Build Status](https://travis-ci.org/BarkleyREI/generator-brei-next.svg?branch=master)](https://travis-ci.org/BarkleyREI/generator-brei-app)
+[![Build Status](https://travis-ci.org/BarkleyREI/experimental-brei-app.svg?branch=master)](https://travis-ci.org/BarkleyREI/generator-brei-app)
 
 [version]: http://img.shields.io/npm/v/generator-brei-next.svg?style=flat-square
 
