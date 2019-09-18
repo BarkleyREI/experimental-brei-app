@@ -185,6 +185,13 @@ module.exports = class extends Generator {
 				}
 			}
 		);
+		this.fs.copyTpl(
+			this.templatePath('../../../node_modules/brei-assemble-structure/index.hbs'),
+			this.destinationPath('app/assemble/index.hbs'),
+			{
+				'appname': this.appname
+			}
+		);
 
 		// brei-assemble-helpers
 		var helpersJson = this.fs.readJSON(
