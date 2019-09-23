@@ -20,7 +20,7 @@ Install the BREI-Next Generator
 npm install -g generator-brei-next
 ```
 
-Finally, initiate the generator:
+Finally, initiate the generator in an empty directory:
 
 ```bash
 yo brei-next
@@ -30,9 +30,12 @@ From here you will be presented with a series of options:
 ```bash
 What would you like to do? (Use arrow keys)
 ❯ Create a New Project
-  Create a Partial
-  Create a Module
   Create a Template
+  Create an Organism
+  Create a Molecule
+  Create an Atom
+  Create a Partial (LEGACY)
+  Create a Module (LEGACY)
   ```
 Just follow the prompts and off you go!
 
@@ -48,22 +51,37 @@ Just follow the prompts and off you go!
 
 Create a new Project:
 ```bash
-yo brei-app:new
+yo brei-next:new
 ```
 
 Create a new Template:
 ```bash
-yo brei-app:template
+yo brei-next:template
 ```
 
-Create a new Module
+Create a new Organism
 ```bash
-yo brei-app:module
+yo brei-next:organism
 ```
 
-Create a new Partial
+Create a new Molecule
 ```bash
-yo brei-app:partial
+yo brei-next:partial
+```
+
+Create a new Atom
+```bash
+yo brei-next:partial
+```
+
+Create a new Partial (LEGACY)
+```bash
+yo brei-next:partial
+```
+
+Create a new Module (LEGACY)
+```bash
+yo brei-next:module
 ```
 
 ## Testing the Generator
