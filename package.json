@@ -67,7 +67,7 @@
 		"glob": "7.1.4",
 		"lodash": "^4.17.15",
 		"mkdirp": "0.5.1",
-		"mocha": "6.2.0",
+		"mocha": "6.2.1",
 		"optional": "0.1.4",
 		"stylelint": "11.0.0",
 		"stylelint-scss": "3.11.1",
