@@ -234,6 +234,7 @@ module.exports = class extends Generator {
 		);
 
 		// Delete crap we don't need
+		this.fs.delete(this.destinationPath('.github/'));
 		this.fs.delete(this.destinationPath('app/scss/README.md'));
 		this.fs.delete(this.destinationPath('app/scss/package.json'));
 		this.fs.delete(this.destinationPath('app/scss/.travis.yml'));
