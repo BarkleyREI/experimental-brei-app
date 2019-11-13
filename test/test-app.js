@@ -17,14 +17,6 @@ let build_error_stdout = '';
  * Test basic file generation,
  * including that from brei-assemble-structure, brei-assemble-helpers, brei-sass-boilerplate.
  */
-describe('Generator Files', function () {
-	'use strict';
-
-	it('Generator self check', function () {
-		let dir = path.join(__dirname, '../');
-		util._test_brei_generator_files(dir);
-	});
-});
 
 describe('Generator Functionality', function () {
 	'use strict';
@@ -76,10 +68,6 @@ describe('Generator Functionality', function () {
 		}
 
 		assert.textEqual('0', build_error_code.toString());
-	});
-
-	it('Standard project setup was created with all files and folders we expect', function () {
-		util._test_brei_npm_built_files(tdir);
 	});
 
 	it('Template Sub-Generator', function () {
