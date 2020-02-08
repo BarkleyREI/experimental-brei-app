@@ -69,7 +69,7 @@
 		"mkdirp": "~0.5.1",
 		"mocha": "~6.2.2",
 		"optional": "~0.1.4",
-		"stylelint": "~12.0.1",
+		"stylelint": "~13.1.0",
 		"stylelint-scss": "~3.11.1",
 		"stylelint-selector-bem-pattern": "~2.1.0",
 		"underscore.string": "~3.3.5",
