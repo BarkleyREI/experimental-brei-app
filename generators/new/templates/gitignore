@@ -31,3 +31,6 @@ app/sass/icons/*.js
 
 # Lock
 package-lock.json
+
+# Travis
+.travis.yml

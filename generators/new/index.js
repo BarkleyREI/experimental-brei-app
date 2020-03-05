@@ -15,7 +15,7 @@ module.exports = class extends Generator {
 		this.pkg = require('../../package.json');
 
 		this.genver = this.pkg['version'];
-		this.debug = 'false';
+		// this.debug = 'false';
 
 	}
 
