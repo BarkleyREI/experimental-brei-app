@@ -9,31 +9,28 @@ module.exports = class extends Generator {
 	constructor(args, opts) {
 
 		// Calling the super constructor is important so our generator is correctly set up
-	    super(args, opts);
+		super(args, opts);
 
 		this.pkg = require('../../package.json');
 
 	}
 
-	prompting() {
-		let done = this.async();
+	async prompting() {
 
-		let prompts = [{
-			type: 'input',
-			name: 'name',
-			message: 'Template name ("standard-level", "program-finder")',
-			default: ''
-		}];
+		this.answers = await this.prompt([
+			{
+				type: 'input',
+				name: 'name',
+				message: 'Template name ("standard-level", "program-finder")',
+				default: ''
+			}
+		]);
 
-		return this.prompt(prompts).then(function (props) {
-			let name = props.name;
-			let pretty = name;
+		let name = this.answers.name;
 
-			this.safename = util._format_input(name);
-			this.prettyname = _.startCase(name);
+		this.safename = util._format_input(name);
+		this.prettyname = _.startCase(name);
 
-			done();
-		}.bind(this));
 	}
 
 	writing() {

@@ -15,49 +15,49 @@ module.exports = class extends Generator {
 
 	}
 
-	prompting() {
-		var done = this.async();
+	async prompting() {
 
-		var prompts = [{
-			type: 'input',
-			name: 'name',
-			message: 'Organism name ("global-slider", "news-feed")',
-			default: ''
-		}, {
-			type: 'input',
-			name: 'tag',
-			message: 'Parent tag (Default: div)',
-			default: 'div'
-		}, {
-			type: 'input',
-			name: 'script',
-			message: 'JS module? E.g. accordion (Default: none)',
-			default: ''
-		}];
-
-		return this.prompt(prompts).then(function (props) {
-			var name = props.name;
-			var tag = props.tag;
-			var script = props.script;
-
-			if (tag === '' || typeof tag === 'undefined') {
-				tag = 'div';
+		this.answers = await this.prompt([
+			{
+				type: 'input',
+				name: 'name',
+				message: 'Organism name ("global-slider", "news-feed")',
+				default: ''
+			}, {
+				type: 'input',
+				name: 'tag',
+				message: 'Parent tag (Default: div)',
+				default: 'div'
+			}, {
+				type: 'input',
+				name: 'script',
+				message: 'ES6 module name? E.g. accordion (Default: No ES6 module generated)',
+				default: ''
 			}
+		]);
 
-			this.safename = util._format_input(name);
-			this.prettyname = _.startCase(name);
-			this.tag = _.lowerCase(tag);
+		let name = this.answers.name;
+		let tag = this.answers.tag;
+		let script = this.answers.script;
 
-			if (script !== '') {
-				this.script = script;
-				this.scriptName = _.camelCase(script);
-			}
+		if (tag === '' || typeof tag === 'undefined') {
+			tag = 'div';
+		}
 
-			done();
-		}.bind(this));
+		this.safename = util._format_input(name);
+		this.prettyname = _.startCase(name);
+		this.tag = _.lowerCase(tag);
+		this.scriptName = '';
+
+		if (script !== '') {
+			this.script = script;
+			this.scriptName = _.camelCase(script);
+		}
+
 	}
 
 	writing() {
+
 		this.fs.copyTpl(
 			this.templatePath('organism.hbs'),
 			this.destinationPath('app/assemble/organisms/_' + this.safename + '.hbs'),
@@ -102,7 +102,7 @@ module.exports = class extends Generator {
 			}
 		);
 
-		if (this.scriptName !== '') {
+		if (this.scriptName !== '' && typeof this.scriptName !== 'undefined') {
 
 			this.fs.copyTpl(
 				this.templatePath('organism.js'),
@@ -114,5 +114,7 @@ module.exports = class extends Generator {
 			);
 
 		}
+
 	}
+
 };
