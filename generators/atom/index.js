@@ -9,45 +9,44 @@ module.exports = class extends Generator {
 	constructor(args, opts) {
 
 		// Calling the super constructor is important so our generator is correctly set up
-	    super(args, opts);
+		super(args, opts);
 
 		this.pkg = require('../../package.json');
 
 	}
 
-	prompting() {
-		let done = this.async();
+	async prompting() {
 
-		let prompts = [{
-			type: 'input',
-			name: 'name',
-			message: 'Atom name ("logo", "button")',
-			default: ''
-		}, {
-			type: 'input',
-			name: 'tag',
-			message: 'Parent tag (Default: div)',
-			default: 'div'
-		}];
-
-		return this.prompt(prompts).then(function (props) {
-			let name = props.name;
-			let tag = props.tag;
-			let pretty = name;
-
-			if (tag === '' || typeof tag === 'undefined') {
-				tag = 'div';
+		this.answers = await this.prompt([
+			{
+				type: 'input',
+				name: 'name',
+				message: 'Atom name ("logo", "button")',
+				default: ''
+			}, {
+				type: 'input',
+				name: 'tag',
+				message: 'Parent tag (Default: div)',
+				default: 'div'
 			}
+		]);
 
-			this.safename = util._format_input(name);
-			this.prettyname = _.startCase(pretty);
-			this.tag = _.lowerCase(tag);
+		let name = this.answers.name;
+		let tag = this.answers.tag;
+		let pretty = name;
 
-			done();
-		}.bind(this));
+		if (tag === '' || typeof tag === 'undefined') {
+			tag = 'div';
+		}
+
+		this.safename = util._format_input(name);
+		this.prettyname = _.startCase(pretty);
+		this.tag = _.lowerCase(tag);
+
 	}
 
 	writing() {
+
 		this.fs.copyTpl(
 			this.templatePath('atom.hbs'),
 			this.destinationPath('app/assemble/atoms/' + this.safename + '.hbs'),
@@ -65,5 +64,7 @@ module.exports = class extends Generator {
 				name: this.safename
 			}
 		);
+
 	}
+	
 };
