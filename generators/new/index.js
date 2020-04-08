@@ -26,37 +26,33 @@ module.exports = class extends Generator {
 
 	}
 
-	prompting() {
+	async prompting() {
 
 		// Ask the people what they want.
+		this.answers = await this.prompt([
+			{
+				type: 'input',
+				name: 'appname',
+				message: 'Name of Client (e.g. NOVA, Corpus, Times Square NYC)',
+				default: 'static'
+			}, {
+				type: 'input',
+				name: 'stash',
+				message: 'Stash Repository Clone URL (ssh:// .git) (Optional)',
+				default: ''
+			}, {
+				type: 'input',
+				name: 'deployDirectory',
+				message: 'Deploy directory (relative to current path)',
+				default: '../../web'
+			}
+		]);
 
-		var done = this.async();
+		this.appname = this.answers.appname;
+		this.appslug = _s.slugify(this.answers.appname);
+		this.stash = this.answers.stash;
+		this.deployDirectory = this.answers.deployDirectory;
 
-		var prompts = [{
-			type: 'input',
-			name: 'appname',
-			message: 'Name of Client (e.g. NOVA, Corpus, Times Square NYC)',
-			default: 'static'
-		}, {
-			type: 'input',
-			name: 'stash',
-			message: 'Stash Repository Clone URL (ssh:// .git) (Optional)',
-			default: ''
-		}, {
-			type: 'input',
-			name: 'deployDirectory',
-			message: 'Deploy directory (relative to current path)',
-			default: '../../web'
-		}];
-
-		return this.prompt(prompts).then(function (answers) {
-			this.appname = answers.appname;
-			this.appslug = _s.slugify(answers.appname);
-			this.stash = answers.stash;
-			this.deployDirectory = answers.deployDirectory;
-
-			done();
-		}.bind(this));
 	}
 
 	configuring() {

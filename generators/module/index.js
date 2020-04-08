@@ -15,35 +15,33 @@ module.exports = class extends Generator {
 
 	}
 
-	prompting() {
-		var done = this.async();
+	async prompting() {
 
-		var prompts = [{
-			type: 'input',
-			name: 'name',
-			message: 'Module name ("_global-slider", "news-feed")',
-			default: ''
-		}, {
-			type: 'input',
-			name: 'tag',
-			message: 'Parent tag (Default: div)',
-			default: 'div'
-		}];
-
-		return this.prompt(prompts).then(function (props) {
-			var name = props.name;
-			var tag = props.tag;
-
-			if (tag === '' || typeof tag === 'undefined') {
-				tag = 'div';
+		this.answers = await this.prompt([
+			{
+				type: 'input',
+				name: 'name',
+				message: 'Module name ("_global-slider", "news-feed")',
+				default: ''
+			}, {
+				type: 'input',
+				name: 'tag',
+				message: 'Parent tag (Default: div)',
+				default: 'div'
 			}
+		]);
 
-			this.safename = util._format_input(name);
-			this.prettyname = _.startCase(name);
-			this.tag = _.lowerCase(tag);
+		var name = this.answers.name;
+		var tag = this.answers.tag;
 
-			done();
-		}.bind(this));
+		if (tag === '' || typeof tag === 'undefined') {
+			tag = 'div';
+		}
+
+		this.safename = util._format_input(name);
+		this.prettyname = _.startCase(name);
+		this.tag = _.lowerCase(tag);
+
 	}
 
 	writing() {
