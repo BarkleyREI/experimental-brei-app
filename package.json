@@ -70,7 +70,7 @@
 		"mocha": "~7.1.0",
 		"optional": "~0.1.4",
 		"stylelint": "~13.3.0",
-		"stylelint-scss": "~3.16.0",
+		"stylelint-scss": "~3.17.0",
 		"stylelint-selector-bem-pattern": "~2.1.0",
 		"underscore.string": "~3.3.5",
 		"update-notifier": "~4.1.0",
