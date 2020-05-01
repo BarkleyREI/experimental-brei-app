@@ -1,0 +1,130 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - brei-util > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint-scss > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint-selector-bem-pattern > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-generator > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - brei-project-scaffold > modernizr > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-generator > async > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - generator-mocha > yeoman-generator > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - mocha > yargs-unparser > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint > postcss-reporter > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint > table > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint-selector-bem-pattern > stylelint > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > inquirer > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-generator > yeoman-environment > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-environment > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-generator > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - generator-mocha > yeoman-generator > async > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-generator > async > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - generator-mocha > yeoman-generator > yeoman-environment > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint > @stylelint/postcss-css-in-js > @babel/core > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint-selector-bem-pattern > stylelint > postcss-reporter > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint-selector-bem-pattern > stylelint > table > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-generator > yeoman-environment > grouped-queue > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-environment > grouped-queue > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-generator > grouped-queue > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-generator > yeoman-environment > inquirer > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-environment > inquirer > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-generator > yeoman-environment > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-generator > yeoman-environment > yeoman-generator > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-environment > yeoman-generator > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-generator > yeoman-environment > yeoman-generator > async > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-environment > yeoman-generator > async > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - generator-mocha > yeoman-generator > yeoman-environment > grouped-queue > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - generator-mocha > yeoman-generator > yeoman-environment > inquirer > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-generator > yeoman-environment > grouped-queue > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-generator > yeoman-environment > yeoman-generator > grouped-queue > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-environment > yeoman-generator > grouped-queue > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-generator > yeoman-environment > inquirer > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-generator > yeoman-environment > yeoman-generator > yeoman-environment > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-environment > yeoman-generator > yeoman-environment > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-generator > yeoman-environment > yeoman-generator > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-generator > yeoman-environment > yeoman-generator > async > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helpers > @babel/traverse > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-generator > yeoman-environment > yeoman-generator > yeoman-environment > grouped-queue > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-environment > yeoman-generator > yeoman-environment > grouped-queue > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-generator > yeoman-environment > yeoman-generator > grouped-queue > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-generator > yeoman-environment > yeoman-generator > yeoman-environment > inquirer > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - yeoman-test > yeoman-environment > yeoman-generator > yeoman-environment > inquirer > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helpers > @babel/traverse > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
+    - stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-05-01T08:24:16.982Z'
