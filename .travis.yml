@@ -1,15 +1,23 @@
 language: node_js
 node_js:
-  - '9'
   - '10'
   - '11'
+  - '12'
+  - '13'
   - 'lts/*'
+  - 'node'
 before_install:
   - npm install -g yo
   - currentfolder=${PWD##*/}
   - if [ "$currentfolder" != 'generator-brei-next' ]; then cd .. && eval "mv $currentfolder generator-brei-next" && cd generator-brei-next; fi
 before_script:
   - npm install -g yo
+install:
+  - npm ci
+# keep the npm cache around to speed up installs
+cache:
+  directories:
+    - "$HOME/.npm"
 deploy:
   provider: npm
   email: nessthehero@gmail.com
