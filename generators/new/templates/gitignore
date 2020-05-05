@@ -17,7 +17,8 @@ node_modules
 *.orig*
 
 # Generated directories and files
-app/css
+app/css/*.css
+app/css/*.map
 app/js
 app/modules
 app/*.html
