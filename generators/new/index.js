@@ -8,15 +8,15 @@ const editjson = require('edit-json-file');
 module.exports = class extends Generator {
 
 	constructor(args, opts) {
-
 		// Calling the super constructor is important so our generator is correctly set up
 		super(args, opts);
 
 		this.pkg = require('../../package.json');
 
 		this.genver = this.pkg['version'];
-		// this.debug = 'false';
 
+		this.argument('name', {type: String, required: false});
+		this.argument('deployDir', {type: String, default: '../../web'});
 	}
 
 	initializing() {
@@ -28,30 +28,41 @@ module.exports = class extends Generator {
 
 	async prompting() {
 
-		// Ask the people what they want.
-		this.answers = await this.prompt([
-			{
-				type: 'input',
-				name: 'appname',
-				message: 'Name of Client (e.g. NOVA, Corpus, Times Square NYC)',
-				default: 'static'
-			}, {
-				type: 'input',
-				name: 'stash',
-				message: 'Stash Repository Clone URL (ssh:// .git) (Optional)',
-				default: ''
-			}, {
-				type: 'input',
-				name: 'deployDirectory',
-				message: 'Deploy directory (relative to current path)',
-				default: '../../web'
-			}
-		]);
+		if (typeof this.options.name === 'undefined' || this.options.name === '') {
 
-		this.appname = this.answers.appname;
-		this.appslug = _s.slugify(this.answers.appname);
-		this.stash = this.answers.stash;
-		this.deployDirectory = this.answers.deployDirectory;
+			// Ask the people what they want.
+			this.answers = await this.prompt([
+				{
+					type: 'input',
+					name: 'appname',
+					message: 'Name of Client (e.g. NOVA, Corpus, Times Square NYC)',
+					default: 'static'
+				}, {
+					type: 'input',
+					name: 'stash',
+					message: 'Stash Repository Clone URL (ssh:// .git) (Optional)',
+					default: ''
+				}, {
+					type: 'input',
+					name: 'deployDirectory',
+					message: 'Deploy directory (relative to current path)',
+					default: '../../web'
+				}
+			]);
+
+			this.appname = this.answers.appname;
+			this.appslug = _s.slugify(this.answers.appname);
+			this.stash = this.answers.stash;
+			this.deployDirectory = this.answers.deployDirectory;
+
+		} else {
+
+			this.appname = this.options.name;
+			this.appslug = _s.slugify(this.options.name);
+			this.stash = '';
+			this.deployDirectory = this.options.deployDir;
+
+		}
 
 	}
 
@@ -71,6 +82,7 @@ module.exports = class extends Generator {
 		this.newPJ.set('description', this.scaffoldPJ.get('description'));
 		this.newPJ.set('author', this.scaffoldPJ.get('author'));
 		this.newPJ.set('license', this.scaffoldPJ.get('license'));
+		this.newPJ.set('browserslist', this.scaffoldPJ.get('browserslist'));
 		this.newPJ.set('dependencies', this.scaffoldPJ.get('dependencies'));
 		this.newPJ.set('devDependencies', this.scaffoldPJ.get('devDependencies'));
 		this.newPJ.set('scripts', this.scaffoldPJ.get('scripts'));
@@ -231,6 +243,7 @@ module.exports = class extends Generator {
 
 		// Delete crap we don't need
 		this.fs.delete(this.destinationPath('.github/'));
+		this.fs.delete(this.destinationPath('.travis.yml'));
 		this.fs.delete(this.destinationPath('app/scss/README.md'));
 		this.fs.delete(this.destinationPath('app/scss/package.json'));
 		this.fs.delete(this.destinationPath('app/scss/.travis.yml'));
