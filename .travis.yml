@@ -7,12 +7,12 @@ node_js:
 - lts/*
 - node
 before_install:
-- npm install -g yo
+- npm install -g yo stylelint
 - currentfolder=${PWD##*/}
 - if [ "$currentfolder" != 'generator-brei-next' ]; then cd .. && eval "mv $currentfolder
   generator-brei-next" && cd generator-brei-next; fi
 before_script:
-- npm install -g yo
+- npm install -g yo stylelint
 deploy:
   provider: npm
   email: nessthehero@gmail.com
