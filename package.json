@@ -1,85 +1,89 @@
 {
-	"name": "generator-brei-next",
-	"version": "4.0.0-rc.17",
-	"description": "Bootstrap client projects at BarkleyREI",
-	"license": "MIT",
-	"main": "generators/app/index.js",
-	"repository": "BarkleyREI/experimental-brei-app",
-	"bugs": "https://github.com/BarkleyREI/experimental-brei-app/issues",
-	"author": {
-		"name": "Ian Moffitt",
-		"email": "nessthehero@gmail.com",
-		"url": "https://github.com/nessthehero"
-	},
-	"contributors": [
-		{
-			"name": "Ian Moffitt",
-			"email": "nessthehero@gmail.com",
-			"url": "https://github.com/nessthehero"
-		},
-		{
-			"name": "Ryan Sprake",
-			"url": "https://github.com/eightdotthree"
-		},
-		{
-			"name": "Joseph Dillon",
-			"url": "https://github.com/jdillon522"
-		},
-		{
-			"name": "Sean Stacho",
-			"url": "https://github.com/Sean-BREI"
-		},
-		{
-			"name": "Sarah Harissis",
-			"url": "https://github.com/sharissis-brei"
-		}
-	],
-	"engines": {
-		"node": ">=10 <=12",
-		"npm": ">=6"
-	},
-	"scripts": {
-		"test": "mocha"
-	},
-	"pre-commit": [
-		"test"
-	],
-	"files": [
-		"generators",
-		"lib",
-		"config"
-	],
-	"keywords": [
-		"yeoman-generator",
-		"barkleyrei",
-		"brei"
-	],
-	"dependencies": {
-		"brei-assemble-helpers": "~2.0.0",
-		"brei-assemble-structure": "~2.0.0",
-		"brei-project-scaffold": "~1.0.0",
-		"brei-sass-boilerplate": "~3.0.0",
-		"brei-sass-mixins": "~2.0.0",
-		"brei-util": "^1.0.0",
-		"chalk": "~2.4.2",
-		"edit-json-file": "~1.4.0",
-		"generator-mocha": "~2.0.4",
-		"glob": "~7.1.6",
-		"lodash": "~4.17.15",
-		"mkdirp": "~1.0.3",
-		"mocha": "~7.1.0",
-		"optional": "~0.1.4",
-		"underscore.string": "~3.3.5",
-		"update-notifier": "~4.1.0",
-		"yeoman-assert": "~3.1.1",
-		"yeoman-generator": "~4.9.0",
-		"yeoman-test": "~2.4.1",
-		"yosay": "~2.0.2"
-	},
-	"devDependencies": {
-		"yo": "~3.1.1",
-		"stylelint": "~13.2.0",
-		"stylelint-scss": "~3.14.2",
-		"stylelint-selector-bem-pattern": "~2.1.0"
-	}
+  "name": "generator-brei-next",
+  "version": "4.0.0-rc.17",
+  "description": "Bootstrap client projects at BarkleyREI",
+  "license": "MIT",
+  "main": "generators/app/index.js",
+  "repository": "BarkleyREI/experimental-brei-app",
+  "bugs": "https://github.com/BarkleyREI/experimental-brei-app/issues",
+  "author": {
+    "name": "Ian Moffitt",
+    "email": "nessthehero@gmail.com",
+    "url": "https://github.com/nessthehero"
+  },
+  "contributors": [
+    {
+      "name": "Ian Moffitt",
+      "email": "nessthehero@gmail.com",
+      "url": "https://github.com/nessthehero"
+    },
+    {
+      "name": "Ryan Sprake",
+      "url": "https://github.com/eightdotthree"
+    },
+    {
+      "name": "Joseph Dillon",
+      "url": "https://github.com/jdillon522"
+    },
+    {
+      "name": "Sean Stacho",
+      "url": "https://github.com/Sean-BREI"
+    },
+    {
+      "name": "Sarah Harissis",
+      "url": "https://github.com/sharissis-brei"
+    }
+  ],
+  "engines": {
+    "node": ">=10 <=12",
+    "npm": ">=6"
+  },
+  "scripts": {
+    "test": "mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "pre-commit": [
+    "test"
+  ],
+  "files": [
+    "generators",
+    "lib",
+    "config"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "barkleyrei",
+    "brei"
+  ],
+  "dependencies": {
+    "brei-assemble-helpers": "~2.0.0",
+    "brei-assemble-structure": "~2.0.0",
+    "brei-project-scaffold": "~1.0.0",
+    "brei-sass-boilerplate": "~3.0.0",
+    "brei-sass-mixins": "~2.0.0",
+    "brei-util": "^1.0.0",
+    "chalk": "~2.4.2",
+    "edit-json-file": "~1.4.0",
+    "generator-mocha": "~2.0.4",
+    "glob": "~7.1.6",
+    "lodash": "~4.17.15",
+    "mkdirp": "~1.0.3",
+    "mocha": "~7.1.0",
+    "optional": "~0.1.4",
+    "underscore.string": "~3.3.5",
+    "update-notifier": "~4.1.0",
+    "yeoman-assert": "~3.1.1",
+    "yeoman-generator": "~4.9.0",
+    "yeoman-test": "~2.4.1",
+    "yosay": "~2.0.2",
+    "snyk": "^1.319.0"
+  },
+  "devDependencies": {
+    "yo": "~3.1.1",
+    "stylelint": "~13.2.0",
+    "stylelint-scss": "~3.14.2",
+    "stylelint-selector-bem-pattern": "~2.1.0"
+  },
+  "snyk": true
 }
