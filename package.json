@@ -1,6 +1,6 @@
 {
 	"name": "generator-brei-next",
-	"version": "4.0.0-rc.17",
+	"version": "4.0.0-rc.18",
 	"description": "Bootstrap client projects at BarkleyREI",
 	"license": "MIT",
 	"main": "generators/app/index.js",
@@ -73,7 +73,7 @@
 		"update-notifier": "~4.1.0",
 		"yeoman-assert": "~3.1.1",
 		"yeoman-generator": "~4.10.0",
-		"yeoman-test": "~2.4.1",
+		"yeoman-test": "~2.5.0",
 		"yosay": "~2.0.2"
 	},
 	"devDependencies": {
