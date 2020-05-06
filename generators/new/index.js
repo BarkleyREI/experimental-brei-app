@@ -114,7 +114,7 @@ module.exports = class extends Generator {
 		);
 
 		// brei-project-scaffold
-		var scaffoldJson = this.fs.readJSON(
+		let scaffoldJson = this.fs.readJSON(
 			this.templatePath('../../../node_modules/brei-project-scaffold/package.json')
 		);
 		this.breiJ.set('brei-project-scaffold', scaffoldJson.version);
@@ -132,7 +132,7 @@ module.exports = class extends Generator {
 		this.fs.delete(this.destinationPath('package.json'));
 
 		// brei-sass-boilerplate
-		var sassJson = this.fs.readJSON(
+		let sassJson = this.fs.readJSON(
 			this.templatePath('../../../node_modules/brei-sass-boilerplate/package.json')
 		);
 		this.breiJ.set('brei-sass-boilerplate', sassJson.version);
@@ -165,7 +165,7 @@ module.exports = class extends Generator {
 		);
 
 		// brei-sass-mixins
-		var mixinJson = this.fs.readJSON(
+		let mixinJson = this.fs.readJSON(
 			this.templatePath('../../../node_modules/brei-sass-mixins/package.json')
 		);
 		this.breiJ.set('brei-sass-mixins', mixinJson.version);
@@ -180,7 +180,10 @@ module.exports = class extends Generator {
 		);
 
 		// brei-assemble-structure
-		var assembleJson = this.fs.readJSON(
+		let jQueryJson = this.fs.readJSON(
+			this.templatePath('../../../node_modules/jquery/package.json')
+		);
+		let assembleJson = this.fs.readJSON(
 			this.templatePath('../../../node_modules/brei-assemble-structure/package.json')
 		);
 		this.breiJ.set('brei-assemble-structure', assembleJson.version);
@@ -194,6 +197,13 @@ module.exports = class extends Generator {
 			}
 		);
 		this.fs.copyTpl(
+			this.templatePath('../../../node_modules/brei-assemble-structure/includes/_js-vendor.hbs'),
+			this.destinationPath('app/assemble/includes/_js-vendor.hbs'),
+			{
+				'jqueryversion': jQueryJson.version
+			}
+		);
+		this.fs.copyTpl(
 			this.templatePath('../../../node_modules/brei-assemble-structure/index.hbs'),
 			this.destinationPath('app/assemble/index.hbs'),
 			{
@@ -202,7 +212,7 @@ module.exports = class extends Generator {
 		);
 
 		// brei-assemble-helpers
-		var helpersJson = this.fs.readJSON(
+		let helpersJson = this.fs.readJSON(
 			this.templatePath('../../../node_modules/brei-assemble-helpers/package.json')
 		);
 		this.breiJ.set('brei-assemble-helpers', helpersJson.version);
