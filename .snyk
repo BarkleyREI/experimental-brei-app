@@ -1,0 +1,50 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - brei-sass-boilerplate > stylelint > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint-scss > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint-selector-bem-pattern > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint > postcss-reporter > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint > table > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint-selector-bem-pattern > stylelint > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint > postcss-jsx > @babel/core > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint-selector-bem-pattern > stylelint > postcss-reporter > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint-selector-bem-pattern > stylelint > table > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint > postcss-jsx > @babel/core > @babel/helper-module-transforms > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint > postcss-jsx > @babel/core > @babel/helpers > @babel/traverse > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint > postcss-jsx > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helpers > @babel/traverse > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint > postcss-jsx > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint > postcss-jsx > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint > postcss-jsx > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
+    - brei-sass-boilerplate > stylelint-selector-bem-pattern > stylelint > @stylelint/postcss-css-in-js > @babel/core > @babel/helper-module-transforms > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-06-11T08:23:04.544Z'
