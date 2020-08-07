@@ -1,6 +1,6 @@
 {
 	"name": "generator-brei-next",
-	"version": "4.0.0-rc.18",
+	"version": "4.0.0-rc.19",
 	"description": "Bootstrap client projects at BarkleyREI",
 	"license": "MIT",
 	"main": "generators/app/index.js",
@@ -55,8 +55,9 @@
 		"brei"
 	],
 	"dependencies": {
-		"brei-assemble-helpers": "~2.0.0",
 		"brei-assemble-structure": "~2.0.0",
+		"brei-handlebars-helpers": "~2.0.0",
+		"brei-pattern-scaffold": "~0.0.1",
 		"brei-project-scaffold": "~1.0.0",
 		"brei-sass-boilerplate": "~3.0.0",
 		"brei-sass-mixins": "~2.0.0",
