@@ -96,8 +96,10 @@ module.exports = class extends Generator {
 
 		// Basic brei config with values we need for various things.
 		// I use this for a command line thing and like keeping custom stuff out of the package.json. - Ian
+		// This also identifies the type of project to the generator.
 		this.breiJ = editjson(this.destinationPath('.') + '/_config/_brei.json');
 		this.breiJ.set('generatorVersion', this.genver);
+		this.breiJ.set('type', 'modern');
 		this.breiJ.set('app', 'app');
 		this.breiJ.set('dist', 'dist');
 		this.breiJ.set('deploy', this.deployDirectory);
