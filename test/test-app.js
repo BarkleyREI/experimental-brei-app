@@ -15,7 +15,7 @@ let build_error_stdout = '';
 
 /**
  * Test basic file generation,
- * including that from brei-assemble-structure, brei-assemble-helpers, brei-sass-boilerplate.
+ * including that from brei-assemble-structure, brei-handlebars-helpers, brei-sass-boilerplate.
  */
 
 describe('Generator Functionality', function () {
