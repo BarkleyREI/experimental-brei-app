@@ -57,7 +57,7 @@ module.exports = class extends Generator {
 
 		this.fs.copyTpl(
 			this.templatePath('partial.scss'),
-			this.destinationPath('app/scss/partials/_' + this.safename + '.scss'),
+			this.destinationPath('app/sass/partials/_' + this.safename + '.scss'),
 			{
 				name: this.safename
 			}

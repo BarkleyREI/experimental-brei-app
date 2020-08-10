@@ -77,13 +77,6 @@ module.exports = class extends Generator {
 					break;
 				case 'pattern':
 					theType = 'This is a pattern library.';
-					// theDefault = 'Create an Atom';
-					// theChoices = [
-					// 	'Create a Template',
-					// 	'Create an Organism',
-					// 	'Create a Molecule',
-					// 	'Create an Atom'
-					// ];
 					break;
 				case 'legacy':
 					theType = 'This is a legacy project.';
