@@ -39,7 +39,9 @@
 		"npm": ">=6"
 	},
 	"scripts": {
-		"test": "mocha"
+		"test": "mocha",
+		"snyk-protect": "snyk protect",
+		"prepublish": "npm run snyk-protect"
 	},
 	"pre-commit": [
 		"test"
@@ -75,12 +77,14 @@
 		"yeoman-assert": "~3.1.1",
 		"yeoman-generator": "~4.11.0",
 		"yeoman-test": "~2.6.0",
-		"yosay": "~2.0.2"
+		"yosay": "~2.0.2",
+		"snyk": "^1.371.0"
 	},
 	"devDependencies": {
 		"yo": "~3.1.1",
 		"stylelint": "~13.2.0",
 		"stylelint-scss": "~3.14.2",
 		"stylelint-selector-bem-pattern": "~2.1.0"
-	}
+	},
+	"snyk": true
 }

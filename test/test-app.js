@@ -24,7 +24,7 @@ describe('Generator Functionality', function () {
 	let tdir = path.join(os.tmpdir(), './temp');
 
 	before(function mainGenerator(done) {
-		this.timeout(120000);
+		this.timeout(240000);
 
 		console.log('\nRunning a generator with npm install. This might take a while...\n\n');
 
@@ -86,13 +86,15 @@ describe('Generator Functionality', function () {
 		util._test_sub_generators('atom', tdir);
 	});
 
-	it('Partial (Legacy) Sub-Generator', function () {
-		util._test_sub_generators('partial', tdir);
-	});
-
-	it('Module (Legacy) Sub-Generator', function () {
-		util._test_sub_generators('module', tdir);
-	});
+	// We can't run these tests since everything is geared around the modern generator, not legacy.
+	//
+	// it('Partial (Legacy) Sub-Generator', function () {
+	// 	util._test_sub_generators('partial', tdir);
+	// });
+	//
+	// it('Module (Legacy) Sub-Generator', function () {
+	// 	util._test_sub_generators('module', tdir);
+	// });
 
 	it('Test updateScss.js', function (done) {
 		let filePath = path.join(tdir, 'app/assemble/no-scss.hbs');

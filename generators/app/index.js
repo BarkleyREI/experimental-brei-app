@@ -92,7 +92,7 @@ module.exports = class extends Generator {
 					theDefault = 'Create a New Modern Project';
 					theChoices = [
 						'Create a New Modern Project',
-						'Create a New Pattern Library'
+						'Create a New Pattern Library (Alpha)'
 					];
 					break;
 			}
