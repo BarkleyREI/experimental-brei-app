@@ -96,8 +96,10 @@ module.exports = class extends Generator {
 
 		// Basic brei config with values we need for various things.
 		// I use this for a command line thing and like keeping custom stuff out of the package.json. - Ian
+		// This also identifies the type of project to the generator.
 		this.breiJ = editjson(this.destinationPath('.') + '/_config/_brei.json');
 		this.breiJ.set('generatorVersion', this.genver);
+		this.breiJ.set('type', 'modern');
 		this.breiJ.set('app', 'app');
 		this.breiJ.set('dist', 'dist');
 		this.breiJ.set('deploy', this.deployDirectory);
@@ -213,21 +215,12 @@ module.exports = class extends Generator {
 
 		// brei-assemble-helpers
 		let helpersJson = this.fs.readJSON(
-			this.templatePath('../../../node_modules/brei-assemble-helpers/package.json')
+			this.templatePath('../../../node_modules/brei-handlebars-helpers/package.json')
 		);
-		this.breiJ.set('brei-assemble-helpers', helpersJson.version);
+		this.breiJ.set('brei-handlebars-helpers', helpersJson.version);
 		this.fs.copy(
-			this.templatePath('../../../node_modules/brei-assemble-helpers/helpers.js'),
+			this.templatePath('../../../node_modules/brei-handlebars-helpers/helpers.js'),
 			this.destinationPath('app/assemble/helpers/helpers.js'),
-			{
-				globOptions: {
-					'dot': true
-				}
-			}
-		);
-		this.fs.copy(
-			this.templatePath('../../../node_modules/brei-assemble-helpers/updateScss.js'),
-			this.destinationPath('lib/updateScss.js'),
 			{
 				globOptions: {
 					'dot': true
@@ -255,6 +248,7 @@ module.exports = class extends Generator {
 		this.fs.delete(this.destinationPath('.github/'));
 		this.fs.delete(this.destinationPath('.travis.yml'));
 		this.fs.delete(this.destinationPath('app/scss/README.md'));
+		this.fs.delete(this.destinationPath('app/scss/node_modules/'));
 		this.fs.delete(this.destinationPath('app/scss/package.json'));
 		this.fs.delete(this.destinationPath('app/scss/.travis.yml'));
 		this.fs.delete(this.destinationPath('app/scss/.gitkeep'));
