@@ -1,6 +1,6 @@
 {
 	"name": "generator-brei-next",
-	"version": "4.1.0-rc.2",
+	"version": "4.1.0-rc.3",
 	"description": "Bootstrap client projects at BarkleyREI",
 	"license": "MIT",
 	"main": "generators/app/index.js",
@@ -58,7 +58,7 @@
 	],
 	"dependencies": {
 		"brei-assemble-structure": "BarkleyREI/brei-assemble-structure#next",
-		"brei-default-components": "BarkleyREI/brei-default-components",
+		"brei-default-components": "git+ssh://git@github.com:BarkleyREI/brei-default-components.git",
 		"brei-handlebars-helpers": "BarkleyREI/brei-handlebars-helpers#next",
 		"brei-pattern-scaffold": "BarkleyREI/brei-pattern-scaffold#next",
 		"brei-project-scaffold": "BarkleyREI/brei-project-scaffold#next",
