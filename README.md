@@ -26,16 +26,18 @@ Finally, initiate the generator in an empty directory:
 yo brei-next
 ```
 
-From here you will be presented with a series of options:
+From here you will be presented with a series of options. The options will differ depending on the contents of the directory.
+
 ```bash
 What would you like to do? (Use arrow keys)
-❯ Create a New Project
+❯ Create a New Modern Project
+  Create a New Pattern Library (Alpha)
   Create a Template
   Create an Organism
   Create a Molecule
   Create an Atom
-  Create a Partial (LEGACY)
-  Create a Module (LEGACY)
+  Create a Partial
+  Create a Module
   ```
 Just follow the prompts and off you go!
 
@@ -52,6 +54,11 @@ Just follow the prompts and off you go!
 Create a new Project:
 ```bash
 yo brei-next:new
+```
+
+Create a new Pattern Library Project:
+```bash
+yo brei-next:pattern
 ```
 
 Create a new Template:
