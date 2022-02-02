@@ -52,11 +52,12 @@ describe('Generator Functionality', function () {
 				let writeDir = path.join(tmdir, 'app/', randoDir);
 
 				fs.mkdir(writeDir, { recursive: true }, function (err) {
-					console.log('created ' + writeDir);
+					console.log('[Modern] Random directory created: ' + writeDir + '\n');
 					if (err) {
 						throw err;
 					}
 					fs.writeFile(path.join(writeDir, randoFile), 'test random file', function (err) {
+						console.log('[Modern] Random file created: ' + path.join(writeDir, randoFile) + '\n');
 						if (err) {
 							throw err;
 						}
@@ -116,11 +117,12 @@ describe('Generator Functionality', function () {
 				let writeDir = path.join(tpdir, 'public/', randoDir);
 
 				fs.mkdir(writeDir, { recursive: true }, function (err) {
-					console.log('created ' + writeDir);
+					console.log('[Pattern] Random directory created: ' + writeDir + '\n');
 					if (err) {
 						throw err;
 					}
 					fs.writeFile(path.join(writeDir, randoFile), 'test random file', function (err) {
+						console.log('[Pattern] Random file created: ' + path.join(writeDir, randoFile) + '\n');
 						if (err) {
 							throw err;
 						}
@@ -188,16 +190,6 @@ describe('Generator Functionality', function () {
 		util._test_sub_generators('atom', tpdir);
 	});
 
-	// We can't run these tests since everything is geared around the modern generator, not legacy.
-	//
-	// it('Partial (Legacy) Sub-Generator', function () {
-	// 	util._test_sub_generators('partial', tdir);
-	// });
-	//
-	// it('Module (Legacy) Sub-Generator', function () {
-	// 	util._test_sub_generators('module', tdir);
-	// });
-
 	it('[Modern] Test updateScss.js', function (done) {
 		let filePath = path.join(tmdir, 'app/assemble/no-scss.hbs');
 
@@ -231,23 +223,19 @@ describe('Generator Functionality', function () {
 	});
 
 	it('[Modern] Test build capturing extraneous files', function (done) {
-
 		assert.file([
 			path.join(tmdir, 'dist/' + randoDir + '/' + randoFile)
 		]);
 
 		done();
-
 	});
 
 	it('[Pattern] Test build capturing extraneous files', function (done) {
-
 		assert.file([
 			path.join(tmdir, 'web/' + randoDir + '/' + randoFile)
 		]);
 
 		done();
-
 	});
 
 });
