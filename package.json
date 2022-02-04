@@ -83,7 +83,6 @@
 	"devDependencies": {
 		"stylelint": "~14.3.0",
 		"stylelint-scss": "~4.1.0",
-		"stylelint-selector-bem-pattern": "~2.1.1",
 		"yo": "~4.3.0"
 	},
 	"snyk": true
